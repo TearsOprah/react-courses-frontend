@@ -1,0 +1,23 @@
+.bg_1 {
+  position: absolute;
+  z-index: -1;
+  width: 500px;
+  top: 50px;
+  left: 50px;
+}
+
+.bg_2 {
+  position: absolute;
+  right: 0;
+  bottom: 0;
+  z-index: -1;
+  width: 600px;
+}
+
+.bg_3 {
+  position: absolute;
+  left: 0;
+  bottom: -100px;
+  z-index: -1;
+  width: 500px;
+}
