@@ -39,6 +39,7 @@
   align-items: start;
   gap: 10px;
   border-bottom: 2px solid rgba(255, 255, 255, 0.5);
+
 }
 
 .category {
@@ -49,11 +50,13 @@
   width: 100%;
   text-align: left;
   cursor: pointer;
+
 }
 
 .category:hover {
   background: linear-gradient(180deg, rgba(255, 255, 255, 0.2) 0%, rgba(255, 255, 255, 0) 100%), rgba(255, 255, 255, 0.3);
   backdrop-filter: blur(15px);
+  transition: all .5s;
 }
 
 .category-active {
