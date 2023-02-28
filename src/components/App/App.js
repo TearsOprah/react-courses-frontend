@@ -7,6 +7,7 @@ import Items from "../Items/Items";
 function App() {
   return (
     <div className="App">
+      <Header />
       <Menu />
       <Items />
       <Background />

@@ -1,7 +1,8 @@
 @import '../../scss/variables';
 
 .item {
-  background: linear-gradient(180deg, rgba(255, 255, 255, 0.2) 0%, rgba(255, 255, 255, 0) 100%), rgba(0, 133, 255, 0.29);  box-shadow: 10px 10px 40px rgba(156, 185, 222, 0.1);
+  background: linear-gradient(180deg, rgba(255, 255, 255, 0.2) 0%, rgba(255, 255, 255, 0) 100%), rgba(255, 255, 255, 0.3);
+  box-shadow: 10px 10px 40px rgba(156, 185, 222, 0.1);
   backdrop-filter: blur(10px);
   border-radius: 10px;
   margin-left: 10px;
@@ -12,6 +13,12 @@
   grid-template-columns: 60px 30% 1fr min-content;
   grid-template-rows: min-content;
   gap: 10px;
+  cursor: pointer;
+  transition: all .5s;
+}
+
+.item:hover {
+  background: linear-gradient(180deg, rgba(255, 255, 255, 0.2) 0%, rgba(255, 255, 255, 0) 100%), rgba(0, 133, 255, 0.29);
 }
 
 .item-image {
