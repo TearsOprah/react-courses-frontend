@@ -1,0 +1,50 @@
+@import '../../scss/variables';
+
+.item {
+  background: linear-gradient(180deg, rgba(255, 255, 255, 0.2) 0%, rgba(255, 255, 255, 0) 100%), rgba(0, 133, 255, 0.29);  box-shadow: 10px 10px 40px rgba(156, 185, 222, 0.1);
+  backdrop-filter: blur(10px);
+  border-radius: 10px;
+  margin-left: 10px;
+  margin-right: 10px;
+  padding: 10px;
+  display: grid;
+  align-items: center;
+  grid-template-columns: 60px 30% 1fr min-content;
+  grid-template-rows: min-content;
+  gap: 10px;
+}
+
+.item-image {
+  height: 50px;
+}
+
+.item-title {
+  text-align: left;
+  color: $black;
+  font-size: 18px;
+  font-weight: 700;
+}
+
+.item-description {
+  text-align: left;
+  color: $gray;
+  font-size: 16px;
+  font-weight: 500;
+}
+
+.item-button {
+  font-size: 16px;
+  border-radius: 20px;
+  background-color: $blue;
+  border: inherit;
+  text-transform: uppercase;
+  padding: 10px;
+  color: $white;
+  cursor: pointer;
+  transition: all .5s;
+}
+
+.item-button:hover {
+  color: $blue;
+  background-color: $white;
+}

@@ -1,11 +1,16 @@
 .items {
-  position: absolute;
+  padding-top: 10px;
+  padding-bottom: 10px;
+  position: relative;
   top: 100px;
-  left: 320px;
+  left: 310px;
   width: calc(100vw - 340px);
   min-height: 400px;
   background: linear-gradient(180deg, rgba(185, 251, 255, 0.2) 0%, rgba(227, 220, 255, 0.2) 100%);
   backdrop-filter: blur(15px);
   border: 2px solid rgba(255, 255, 255, 0.5);
   border-radius: 10px;
+  display: flex;
+  flex-direction: column;
+  gap: 20px;
 }
