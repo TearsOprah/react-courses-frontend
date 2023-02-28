@@ -3,8 +3,7 @@
   position: absolute;
   left: 0;
   top: 0;
-  border: 2px solid;
-  border-image-source: linear-gradient(165.4deg, #FFFFFF -10.07%, rgba(255, 255, 255, 0) 89.61%);
+  border: 2px solid rgba(255, 255, 255, 0.5);
   height: 100vh;
   background: linear-gradient(180deg, rgba(185, 251, 255, 0.2) 0%, rgba(227, 220, 255, 0.2) 100%);
   backdrop-filter: blur(15px);
