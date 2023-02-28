@@ -6,10 +6,10 @@ export default function Menu(props) {
     <div className={'menu'}>
       <div className={'company-info'}>
         <img className={'company-logo'} src={logoImage}/>
-        <h2 className={'company-name'}>Название компании</h2>
+        <h2 className={'company-name'}>My Company</h2>
       </div>
       <ul className={'menu-categories'}>
-        <li className={'category'}>Категория 1</li>
+        <li className={'category category-active'}>Категория 1</li>
         <li className={'category'}>Категория 2</li>
         <li className={'category'}>Категория 3</li>
         <li className={'category'}>Категория 4</li>
