@@ -1,12 +1,16 @@
 import './Item.scss'
-import logoImage from '../../images/logo.png'
 
 export default function Item(props) {
+
+  function handleItemClick() {
+    props.onItemClick(props.item)
+  }
+
   return (
-    <li className={'item'}>
-      <img className={'item-image'} src={logoImage} />
-      <h3 className={'item-title'}>Какой-то заголовок</h3>
-      <p className={'item-description'}>Lorem Ipsum is simply dummy text of the printing and typesetting industry.</p>
+    <li className={'item'} onClick={handleItemClick}>
+      <img className={'item-image'} src={props.item.image} />
+      <h3 className={'item-title'}>{props.item.title}</h3>
+      <p className={'item-description'}>{props.item.description}</p>
       <button className={'item-button'}>Начать</button>
     </li>
   )

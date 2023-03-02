@@ -9,12 +9,6 @@ export default function Categories(props) {
     'Разработка',
     'Иностранные языки',
     'Маркетинг',
-    'Еще категория',
-    'Еще категория',
-    'Еще категория',
-    'Еще категория',
-    'Еще категория',
-    'Еще категория',
   ]
 
   const [activeIndexCategory, setActiveIndexCategory] = useState(false)
