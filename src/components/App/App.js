@@ -25,7 +25,9 @@ function App() {
     <div className="App">
       <Header />
       <Menu />
-      <Items onItemClick={handleItemClick}/>
+      <div>
+        <Items onItemClick={handleItemClick}/>
+      </div>
       <Background />
       <ItemPopup item={selectedItem}
                  onClose={closeAllPopups}
