@@ -14,15 +14,30 @@
   visibility: hidden;
   opacity: 0;
   //transition: visibility 0.5s, opacity 0.5s linear;
+}
 
-  div {
-    height: 700px;
-    width: 800px;
-    background: linear-gradient(180deg, rgba(185, 251, 255, 0.2) 0%, rgba(227, 220, 255, 0.2) 100%);
-    backdrop-filter: blur(15px);
-    border: 2px solid rgba(255, 255, 255, 0.5);
-    border-radius: 10px;
-  }
+.popup-container {
+  height: 700px;
+  width: 800px;
+  background: linear-gradient(180deg, rgba(185, 251, 255, 0.2) 0%, rgba(227, 220, 255, 0.2) 100%);
+  backdrop-filter: blur(15px);
+  border: 2px solid rgba(255, 255, 255, 0.5);
+  border-radius: 10px;
+  padding: 50px;
+}
+
+.popup-image {
+  height: 100px;
+  width: 100px;
+  object-fit: cover;
+}
+
+.popup-title {
+
+}
+
+.popup-description {
+
 }
 
 .popup_opened {
