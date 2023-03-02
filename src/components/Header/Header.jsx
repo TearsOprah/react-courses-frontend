@@ -1,5 +1,6 @@
 import './Header.scss';
 import logoImage from "../../images/logo.png";
+import Search from "../Search/Search";
 
 export default function Header() {
   return (
@@ -8,6 +9,7 @@ export default function Header() {
         <img className={'company-logo'} src={logoImage}/>
         <h2 className={'company-name'}>My Company</h2>
       </div>
+      <Search />
     </header>
   )
 }

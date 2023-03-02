@@ -5,6 +5,7 @@ import Background from "../Background/Background";
 import Items from "../Items/Items";
 import {useState} from "react";
 import ItemPopup from "../ItemPopup/ItemPopup";
+import Content from "../Content/Content";
 
 function App() {
 
@@ -25,9 +26,7 @@ function App() {
     <div className="App">
       <Header />
       <Menu />
-      <div>
-        <Items onItemClick={handleItemClick}/>
-      </div>
+      <Items onItemClick={handleItemClick}/>
       <Background />
       <ItemPopup item={selectedItem}
                  onClose={closeAllPopups}
