@@ -12,6 +12,9 @@ export default function Menu(props) {
           <li className={'link'}>Еще какая-то ссылка</li>
           <li className={'link'}>Еще какая-то ссылка</li>
           <li className={'link'}>Еще какая-то ссылка</li>
+          <li className={'link'}>Еще какая-то ссылка</li>
+          <li className={'link'}>Еще какая-то ссылка</li>
+          <li className={'link'}>Еще какая-то ссылка</li>
         </ul>
       </div>
     </>
