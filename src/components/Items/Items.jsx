@@ -11,14 +11,14 @@ export default function Items(props) {
     1: 'animation',
     2: 'development',
     3: 'language',
-    4: 'marketing'
+    4: 'marketing',
   }
 
   // пустой массив изначально, после обращения к api -> заменяем полученными данными
   const [items, setItems] = useState([])
   // получаем массив с курсами, следим за изменение активной категории
   useEffect(() => {
-    fetch(`http://localhost:4000/courses/${props.activeIndexCategory === false ? '' : `${categoriesId[props.activeIndexCategory]}`}`)
+    fetch(`http://localhost:4000/courses/${props.activeIndexCategory === 5 ? '' : `${categoriesId[props.activeIndexCategory]}`}`)
       .then(res => res.json())
       .then(data => {
         // заменяем полученными данными

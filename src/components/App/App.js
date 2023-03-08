@@ -10,7 +10,7 @@ import ItemPopup from "../ItemPopup/ItemPopup";
 function App() {
 
   // выбор активной категории
-  const [activeIndexCategory, setActiveIndexCategory] = useState(false)
+  const [activeIndexCategory, setActiveIndexCategory] = useState(5)
   const onClickCategory = (index) => {
     setActiveIndexCategory(index)
   }
@@ -33,7 +33,6 @@ function App() {
   return (
     <div className="App">
       <Header />
-      // прокидываем стейт категории с функцией в Categories сквозь Menu
       <Menu activeIndexCategory={activeIndexCategory} onClickCategory={(index) => onClickCategory(index)} />
       <Items onItemClick={handleItemClick} activeIndexCategory={activeIndexCategory} />
       <Background />

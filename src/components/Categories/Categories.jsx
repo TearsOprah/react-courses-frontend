@@ -8,6 +8,7 @@ export default function Categories({ activeIndexCategory, onClickCategory }) {
     'Разработка',
     'Иностранные языки',
     'Маркетинг',
+    'Все курсы',
   ]
 
   return (
