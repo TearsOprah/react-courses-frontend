@@ -5,12 +5,20 @@ import {useEffect, useState} from "react";
 
 export default function Items(props) {
 
+  // объект с названиями категорий
+  const categoriesId = {
+    0: 'design',
+    1: 'animation',
+    2: 'development',
+    3: 'language',
+    4: 'marketing'
+  }
+
   // пустой массив изначально, после обращения к api -> заменяем полученными данными
   const [items, setItems] = useState([])
-
-  // однократно при загрузке получаем массив с курсами
+  // получаем массив с курсами, следим за изменение активной категории
   useEffect(() => {
-    fetch('http://localhost:4000/courses/')
+    fetch(`http://localhost:4000/courses/${props.activeIndexCategory === false ? '' : `${categoriesId[props.activeIndexCategory]}`}`)
       .then(res => res.json())
       .then(data => {
         // заменяем полученными данными
@@ -19,7 +27,7 @@ export default function Items(props) {
       .catch(err => {
         console.log(err)
       })
-  }, [])
+  }, [props.activeIndexCategory])
 
   return (
     <ul className={'items'}>

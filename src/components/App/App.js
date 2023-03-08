@@ -35,7 +35,7 @@ function App() {
       <Header />
       // прокидываем стейт категории с функцией в Categories сквозь Menu
       <Menu activeIndexCategory={activeIndexCategory} onClickCategory={(index) => onClickCategory(index)} />
-      <Items onItemClick={handleItemClick}/>
+      <Items onItemClick={handleItemClick} activeIndexCategory={activeIndexCategory} />
       <Background />
       <ItemPopup item={selectedItem}
                  onClose={closeAllPopups}
