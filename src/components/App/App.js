@@ -9,11 +9,13 @@ import Content from "../Content/Content";
 
 function App() {
 
+  // открытие попапа с курсом
   function handleItemClick(item) {
     setSelectedItem(item)
     setIsItemPopupOpen(true)
   }
 
+  // закрытие попапа
   function closeAllPopups() {
     setIsItemPopupOpen(false)
     setSelectedItem({})
@@ -24,7 +26,7 @@ function App() {
 
   return (
     <div className="App">
-      <Header />
+      <Header/>
       <Menu />
       <Items onItemClick={handleItemClick}/>
       <Background />

@@ -1,5 +1,4 @@
 import './Menu.scss'
-import logoImage from '../../images/logo.png'
 import Categories from "../Categories/Categories";
 
 export default function Menu(props) {
