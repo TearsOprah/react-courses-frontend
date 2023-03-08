@@ -1,7 +1,6 @@
 import './Categories.scss'
-import {useState} from "react";
 
-export default function Categories(props) {
+export default function Categories({ activeIndexCategory, onClickCategory }) {
 
   const categories = [
     'Дизайн',
@@ -10,12 +9,6 @@ export default function Categories(props) {
     'Иностранные языки',
     'Маркетинг',
   ]
-
-  const [activeIndexCategory, setActiveIndexCategory] = useState(false)
-
-  const onClickCategory = (index) => {
-    setActiveIndexCategory(index)
-  }
 
   return (
     <ul className={'menu-categories'}>

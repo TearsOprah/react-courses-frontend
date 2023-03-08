@@ -16,6 +16,9 @@ export default function Items(props) {
         // заменяем полученными данными
         setItems(data)
       })
+      .catch(err => {
+        console.log(err)
+      })
   }, [])
 
   return (

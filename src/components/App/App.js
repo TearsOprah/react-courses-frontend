@@ -5,9 +5,15 @@ import Background from "../Background/Background";
 import Items from "../Items/Items";
 import {useState} from "react";
 import ItemPopup from "../ItemPopup/ItemPopup";
-import Content from "../Content/Content";
+
 
 function App() {
+
+  // выбор активной категории
+  const [activeIndexCategory, setActiveIndexCategory] = useState(false)
+  const onClickCategory = (index) => {
+    setActiveIndexCategory(index)
+  }
 
   // открытие попапа с курсом
   function handleItemClick(item) {
@@ -26,8 +32,9 @@ function App() {
 
   return (
     <div className="App">
-      <Header/>
-      <Menu />
+      <Header />
+      // прокидываем стейт категории с функцией в Categories сквозь Menu
+      <Menu activeIndexCategory={activeIndexCategory} onClickCategory={(index) => onClickCategory(index)} />
       <Items onItemClick={handleItemClick}/>
       <Background />
       <ItemPopup item={selectedItem}
