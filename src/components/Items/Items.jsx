@@ -18,7 +18,7 @@ export default function Items(props) {
   const [items, setItems] = useState([])
   // получаем массив с курсами, следим за изменение активной категории
   useEffect(() => {
-    fetch(`http://localhost:4000/courses/${props.activeIndexCategory === 5 ? '' : `${categoriesId[props.activeIndexCategory]}`}`)
+    fetch(`https://react-courses-backend.vercel.app/courses/${props.activeIndexCategory === 5 ? '' : `${categoriesId[props.activeIndexCategory]}`}`)
       .then(res => res.json())
       .then(data => {
         // заменяем полученными данными
