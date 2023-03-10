@@ -11,9 +11,7 @@ export default function Menu({ activeIndexCategory, onClickCategory }) {
         <ul className={'other-links'}>
           <li className={'link'}>Еще какая-то ссылка</li>
           <li className={'link'}>Еще какая-то ссылка</li>
-          <li className={'link'}>Еще какая-то ссылка</li>
-          <li className={'link'}>Еще какая-то ссылка</li>
-          <li className={'link'}>Еще какая-то ссылка</li>
+
 
         </ul>
       </div>
