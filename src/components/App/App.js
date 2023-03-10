@@ -5,6 +5,7 @@ import Background from "../Background/Background";
 import Items from "../Items/Items";
 import {useState} from "react";
 import ItemPopup from "../ItemPopup/ItemPopup";
+import { useEffect } from "react";
 
 
 function App() {
@@ -15,7 +16,32 @@ function App() {
     setActiveIndexCategory(index)
   }
 
-  // открытие попапа с курсом
+  // логика для items
+  // объект с названиями категорий
+  const categoriesId = {
+    0: 'design',
+    1: 'animation',
+    2: 'development',
+    3: 'language',
+    4: 'marketing',
+  }
+
+  // пустой массив изначально, после обращения к api -> заменяем полученными данными
+  const [items, setItems] = useState([])
+  // получаем массив с курсами, следим за изменение активной категории
+  useEffect(() => {
+    fetch(`https://react-courses-backend.vercel.app/courses/${activeIndexCategory === 5 ? '' : `${categoriesId[activeIndexCategory]}`}`)
+      .then(res => res.json())
+      .then(data => {
+        // заменяем полученными данными
+        setItems(data)
+      })
+      .catch(err => {
+        console.log(err)
+      })
+  }, [activeIndexCategory])
+
+  // логика открытия попапа с курсом
   function handleItemClick(item) {
     setSelectedItem(item)
     setIsItemPopupOpen(true)
@@ -34,7 +60,7 @@ function App() {
     <div className="App">
       <Header />
       <Menu activeIndexCategory={activeIndexCategory} onClickCategory={(index) => onClickCategory(index)} />
-      <Items onItemClick={handleItemClick} activeIndexCategory={activeIndexCategory} />
+      <Items items={items} onItemClick={handleItemClick} activeIndexCategory={activeIndexCategory} />
       <Background />
       <ItemPopup item={selectedItem}
                  onClose={closeAllPopups}
