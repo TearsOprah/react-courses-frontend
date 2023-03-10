@@ -11,4 +11,11 @@
   border-radius: 15px;
   background-color: $blue;
   text-transform: uppercase;
+  cursor: pointer;
+  transition: all ease .5s;
+}
+
+.tag:hover {
+  color: $blue;
+  background-color: $white;
 }
