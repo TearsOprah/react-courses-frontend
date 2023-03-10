@@ -27,7 +27,7 @@
   border-radius: 10px;
   padding: 20px;
   display: grid;
-  grid-template-rows: 100px 50px 1fr 30px 25px 25px;
+  grid-template-rows: 100px 50px 1fr 35px 25px 25px;
   gap: 10px;
   justify-items: center;
 }
@@ -55,7 +55,11 @@
 
 .popup-tags {
   display: flex;
+  justify-content: center;
+  align-items: center;
   gap: 2px;
+  overflow-x: auto;
+  white-space: nowrap;
 }
 
 .popup-price {

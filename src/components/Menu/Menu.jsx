@@ -11,8 +11,12 @@ export default function Menu({ activeIndexCategory, onClickCategory }) {
         <ul className={'other-links'}>
           <li className={'link'}>Еще какая-то ссылка</li>
           <li className={'link'}>Еще какая-то ссылка</li>
-
-
+        </ul>
+        <h2 className={'tags-title'}>Теги</h2>
+        <ul className={'menu-tags'}>
+          <li>1</li>
+          <li>2</li>
+          <li>3</li>
         </ul>
       </div>
     </>
