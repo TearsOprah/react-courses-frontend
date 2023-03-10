@@ -1,7 +1,18 @@
 import './Menu.scss'
 import Categories from "../Categories/Categories";
+import Tag from "../Tag/Tag";
 
-export default function Menu({ activeIndexCategory, onClickCategory }) {
+export default function Menu({ items, activeIndexCategory, onClickCategory }) {
+
+  // получаем список уникальных тегов
+  const uniqueTags = {};
+  items.forEach(course => {
+    course.tags.forEach(tag => {
+      uniqueTags[tag] = true;
+    });
+  });
+
+  const tagList = Object.keys(uniqueTags);
 
   return (
     <>
@@ -14,9 +25,7 @@ export default function Menu({ activeIndexCategory, onClickCategory }) {
         </ul>
         <h2 className={'tags-title'}>Теги</h2>
         <ul className={'menu-tags'}>
-          <li>1</li>
-          <li>2</li>
-          <li>3</li>
+          {tagList.map((tag, index)=> <Tag key={index} value={tag} />)}
         </ul>
       </div>
     </>

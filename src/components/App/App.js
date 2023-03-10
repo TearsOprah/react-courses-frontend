@@ -59,7 +59,7 @@ function App() {
   return (
     <div className="App">
       <Header />
-      <Menu activeIndexCategory={activeIndexCategory} onClickCategory={(index) => onClickCategory(index)} />
+      <Menu items={items} activeIndexCategory={activeIndexCategory} onClickCategory={(index) => onClickCategory(index)} />
       <Items items={items} onItemClick={handleItemClick} activeIndexCategory={activeIndexCategory} />
       <Background />
       <ItemPopup item={selectedItem}

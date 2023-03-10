@@ -9,7 +9,7 @@ export default function ItemPopup(props) {
         <p className={'popup-description'}>{props.item.description}</p>
         <button className={'popup-closer'} onClick={props.onClose}></button>
         <div className={'popup-tags'}>
-          {props.item && props.item.tags && props.item.tags.map((tag, index) => <Tag key={index} value={tag.toUpperCase()} />)}
+          {props.item && props.item.tags && props.item.tags.map((tag, index) => <Tag key={index} value={tag} />)}
         </div>
         <p className={'popup-price'}>
           {props.item.price === 'free' ? 'Можно учиться бесплатно' : `Стоимость курса: ` + Number(props.item.price).toLocaleString('ru-RU', {
