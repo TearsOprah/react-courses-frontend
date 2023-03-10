@@ -3,19 +3,19 @@
 .tag {
   padding: 7px;
   border: none;
-  color: $white;
+  color: $blue;
   text-align: center;
   text-decoration: none;
   font-size: 14px;
   font-weight: 600;
   border-radius: 15px;
-  background-color: $blue;
+  background-color: $white;
   text-transform: uppercase;
   cursor: pointer;
   transition: all ease .5s;
 }
 
 .tag:hover {
-  color: $blue;
-  background-color: $white;
+  color: $white;
+  background-color: $blue;
 }
