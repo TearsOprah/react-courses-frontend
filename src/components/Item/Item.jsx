@@ -17,7 +17,7 @@ export default function Item(props) {
       <h3 className={'item-title'}>{props.item.title}</h3>
       <p className={'item-description'}>{props.item.description.slice(0, 110)}...</p>
       <p className={'item-price'}>
-        {props.item.price === 'free' ? 'бесплатно' : props.item.price.toLocaleString('ru-RU', {
+        {props.item.price === 'free' ? 'бесплатно' : Number(props.item.price).toLocaleString('ru-RU', {
           style: 'currency',
           currency: 'RUB',
           minimumFractionDigits: 0,
