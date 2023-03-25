@@ -10,9 +10,20 @@ import { useEffect } from "react";
 
 function App() {
 
+
+  // выбор активного тега
+  const [activeTag, setActiveTag] = useState(false)
+  const onClickTag = (tag) => {
+    setActiveTag(tag)
+  }
+
+  // стейт с курсами выбранной категории
+  const [activeCategory, setActiveCategory] = useState([])
+
   // выбор активной категории
   const [activeIndexCategory, setActiveIndexCategory] = useState(5)
   const onClickCategory = (index) => {
+    setActiveTag(false)
     setActiveIndexCategory(index)
   }
 
@@ -33,13 +44,27 @@ function App() {
     fetch(`https://react-courses-backend.vercel.app/courses/${activeIndexCategory === 5 ? '' : `${categoriesId[activeIndexCategory]}`}`)
       .then(res => res.json())
       .then(data => {
-        // заменяем полученными данными
-        setItems(data)
+
+        setActiveCategory(data)
+
+        if (activeTag) {
+          // фильтруем курсы по активному тегу
+          const filteredData = data.filter(course => course.tags.includes(activeTag))
+          setItems(filteredData)
+          console.log(filteredData)
+        } else {
+          setItems(data)
+        }
+
+
+        // // заменяем полученными данными
+        //
+        // console.log(data)
       })
       .catch(err => {
         console.log(err)
       })
-  }, [activeIndexCategory])
+  }, [activeIndexCategory, activeTag])
 
   // логика открытия попапа с курсом
   function handleItemClick(item) {
@@ -59,9 +84,20 @@ function App() {
   return (
     <div className="App">
       <Header />
-      <Menu items={items} activeIndexCategory={activeIndexCategory} onClickCategory={(index) => onClickCategory(index)} />
-      <Items items={items} onItemClick={handleItemClick} activeIndexCategory={activeIndexCategory} />
+
+      <Menu activeTag={activeTag}
+            onClickTag={(tag) => onClickTag(tag)}
+            activeIndexCategory={activeIndexCategory}
+            onClickCategory={(index) => onClickCategory(index)}
+            activeCategory={activeCategory}
+      />
+
+      <Items items={items}
+             onItemClick={handleItemClick}
+             activeIndexCategory={activeIndexCategory} />
+
       <Background />
+
       <ItemPopup item={selectedItem}
                  onClose={closeAllPopups}
                  isOpen={isItemPopupOpen} />

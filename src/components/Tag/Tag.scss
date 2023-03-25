@@ -15,6 +15,11 @@
   transition: all ease .5s;
 }
 
+.tag-active {
+  color: $white;
+  background-color: $blue;
+}
+
 .tag:hover {
   color: $white;
   background-color: $blue;

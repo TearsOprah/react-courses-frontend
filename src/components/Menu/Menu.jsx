@@ -2,11 +2,15 @@ import './Menu.scss'
 import Categories from "../Categories/Categories";
 import Tag from "../Tag/Tag";
 
-export default function Menu({ items, activeIndexCategory, onClickCategory }) {
+export default function Menu({ activeIndexCategory,
+                               onClickCategory,
+                               activeTag,
+                               onClickTag,
+                               activeCategory }) {
 
   // получаем список уникальных тегов
   const uniqueTags = {};
-  items.forEach(course => {
+  activeCategory.forEach(course => {
     course.tags.forEach(tag => {
       uniqueTags[tag] = true;
     });
@@ -17,7 +21,8 @@ export default function Menu({ items, activeIndexCategory, onClickCategory }) {
   return (
     <>
       <div className={'menu'}>
-        <Categories activeIndexCategory={activeIndexCategory} onClickCategory={(index) => onClickCategory(index)} />
+        <Categories activeIndexCategory={activeIndexCategory}
+                    onClickCategory={(index) => onClickCategory(index)} />
         <h2 className={'other-links-title'}>Тут дополнительные ссылки</h2>
         <ul className={'other-links'}>
           <li className={'link'}>Еще какая-то ссылка</li>
@@ -25,7 +30,7 @@ export default function Menu({ items, activeIndexCategory, onClickCategory }) {
         </ul>
         <h2 className={'tags-title'}>Теги</h2>
         <ul className={'menu-tags'}>
-          {tagList.map((tag, index)=> <Tag key={index} value={tag} />)}
+          {tagList.map((tag, index)=> <Tag onClickTag={(tag) => onClickTag(tag)} activeTag={activeTag} key={index} value={tag} />)}
         </ul>
       </div>
     </>
