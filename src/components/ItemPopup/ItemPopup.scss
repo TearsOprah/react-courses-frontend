@@ -73,10 +73,10 @@
   color: $blue;
   transition: all .5s;
   font-size: 20px;
-
 }
 
 .popup-link:hover {
+  cursor: pointer;
   opacity: .7;
 }
 

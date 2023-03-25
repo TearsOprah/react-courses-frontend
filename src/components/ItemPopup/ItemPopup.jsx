@@ -20,7 +20,7 @@ export default function ItemPopup(props) {
           })}
         </p>
 
-        <a className={'popup-link'} href='#' target='_blank'>Перейти на сайт</a>
+        <a className={'popup-link'} target='_blank'>Перейти на сайт</a>
       </div>
     </div>
   )

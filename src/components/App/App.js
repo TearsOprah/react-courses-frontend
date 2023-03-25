@@ -72,14 +72,36 @@ function App() {
     setIsItemPopupOpen(true)
   }
 
+
+  const [selectedItem, setSelectedItem] = useState({})
+  const [isItemPopupOpen, setIsItemPopupOpen] = useState(false)
+
+
   // закрытие попапа
   function closeAllPopups() {
     setIsItemPopupOpen(false)
     setSelectedItem({})
   }
 
-  const [selectedItem, setSelectedItem] = useState({})
-  const [isItemPopupOpen, setIsItemPopupOpen] = useState(false)
+
+  // логика закрытия попапа на esc
+  const isOpen = isItemPopupOpen
+
+  useEffect(() => {
+    function closeByEscape(evt) {
+      if (evt.key === 'Escape') {
+        closeAllPopups();
+      }
+    }
+
+    if (isOpen) { // навешиваем только при открытии попапов
+      document.addEventListener('keydown', closeByEscape);
+      return () => {
+        document.removeEventListener('keydown', closeByEscape);
+      }
+    }
+  }, [isOpen])
+
 
   return (
     <div className="App">
