@@ -6,6 +6,7 @@ import Items from "../Items/Items";
 import {useState} from "react";
 import ItemPopup from "../ItemPopup/ItemPopup";
 import { useEffect } from "react";
+import ErrorLoad from "../ErrorLoad/ErrorLoad";
 
 
 function App() {
@@ -37,6 +38,9 @@ function App() {
     4: 'marketing',
   }
 
+  // стейт для ошибки получения данных с сервера
+  const [hasError, setHasError] = useState(false);
+
   // пустой массив изначально, после обращения к api -> заменяем полученными данными
   const [items, setItems] = useState([])
   // получаем массив с курсами, следим за изменение активной категории
@@ -55,14 +59,12 @@ function App() {
         } else {
           setItems(data)
         }
+        setHasError(false); // сбрасываем состояние ошибки при успешном получении данных
 
-
-        // // заменяем полученными данными
-        //
-        // console.log(data)
       })
       .catch(err => {
         console.log(err)
+        setHasError(true); // устанавливаем состояние ошибки в true при ошибке получения данных
       })
   }, [activeIndexCategory, activeTag])
 
@@ -114,9 +116,9 @@ function App() {
             activeCategory={activeCategory}
       />
 
-      <Items items={items}
-             onItemClick={handleItemClick}
-             activeIndexCategory={activeIndexCategory} />
+      {hasError ? <ErrorLoad /> : <Items items={items}
+                                    onItemClick={handleItemClick}
+                                    activeIndexCategory={activeIndexCategory} />}
 
       <Background />
 

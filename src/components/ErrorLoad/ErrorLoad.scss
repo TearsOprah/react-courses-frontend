@@ -1,0 +1,28 @@
+@import '../../scss/variables';
+
+.error {
+  position: absolute;
+  padding-top: 10px;
+  padding-bottom: 10px;
+  top: 80px;
+  //left: 310px;
+  left: calc(310px + (100% - (520px))/2);
+  max-width: 1200px;
+  width: 260px;
+  background: linear-gradient(180deg, rgba(185, 251, 255, 0.2) 0%, rgba(227, 220, 255, 0.2) 100%);
+  backdrop-filter: blur(15px);
+  border: 2px solid rgba(255, 255, 255, 0.5);
+  border-radius: 10px;
+  display: flex;
+  flex-direction: column;
+  gap: 20px;
+  color: $gray;
+
+  h3 {
+    font-size: 26px;
+  }
+
+  p {
+    font-size: 22px;
+  }
+}
