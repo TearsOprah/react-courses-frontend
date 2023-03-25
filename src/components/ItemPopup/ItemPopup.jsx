@@ -1,9 +1,16 @@
 import './ItemPopup.scss'
 import Tag from "../Tag/Tag";
 export default function ItemPopup(props) {
+
+  const handleOverlayClick = (event) => {
+    if (event.target === event.currentTarget) {
+      props.onClose();
+    }
+  };
+
   return (
-    <div className={'popup popup_type_item' + (props.isOpen && ' popup_opened')}>
-      <div className={'popup-container'}>
+    <div className={'popup popup_type_item' + (props.isOpen && ' popup_opened')} onClick={handleOverlayClick} >
+      <div className={'popup-container'} onClick={(e) => e.stopPropagation()} >
         <img className={'popup-image'} src={props.item.image} alt='логотип образовательной платформы'/>
         <h3 className={'popup-title'}>{props.item.title}</h3>
         <p className={'popup-description'}>{props.item.description}</p>
