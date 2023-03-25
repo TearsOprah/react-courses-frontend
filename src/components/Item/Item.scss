@@ -15,6 +15,17 @@
   gap: 10px;
   cursor: pointer;
   transition: all .5s;
+
+  @media screen and (max-width: 1100px) {
+    grid-template-columns: 50px 20% 1fr 90px min-content;
+  }
+
+  @media screen and (max-width: 900px) {
+    grid-template-columns: 1fr;
+    grid-template-rows: 50px 50px 1fr 20px min-content;
+    justify-content: center;
+  }
+
 }
 
 .item:hover {
@@ -25,6 +36,7 @@
   height: 50px;
   width: 50px;
   object-fit: cover;
+  justify-self: center;
 }
 
 .item-title {
@@ -32,6 +44,10 @@
   color: $black;
   font-size: 18px;
   font-weight: 700;
+
+  @media screen and (max-width: 900px) {
+    text-align: center;
+  }
 }
 
 .item-description {
@@ -39,6 +55,10 @@
   color: $gray;
   font-size: 16px;
   font-weight: 500;
+
+  @media screen and (max-width: 900px) {
+    text-align: center;
+  }
 }
 
 .item-button {
@@ -51,6 +71,8 @@
   color: $white;
   cursor: pointer;
   transition: all .5s;
+  max-width: 110px;
+  justify-self: center;
 }
 
 .item-button:hover {

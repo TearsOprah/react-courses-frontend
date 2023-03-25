@@ -21,6 +21,12 @@
   @media screen and (max-width: 1520px) {
     left: 310px;
   }
+
+  @media screen and (max-width: 600px) {
+    left: 210px;
+    width: calc(100% - 220px);
+  }
+
 }
 
 .pagination {

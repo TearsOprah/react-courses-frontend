@@ -15,7 +15,7 @@ export default function Item(props) {
     <li className={'item'} onClick={handleItemClick}>
       <img className={'item-image'} src={props.item.image} alt={`${props.item.title} logo`}/>
       <h3 className={'item-title'}>{props.item.title}</h3>
-      <p className={'item-description'}>{props.item.description.slice(0, 110)}...</p>
+      <p className={'item-description'}>{props.item.description.slice(0, 120)}...</p>
       <p className={'item-price'}>
         {props.item.price === 'free' ? 'бесплатно' : Number(props.item.price).toLocaleString('ru-RU', {
           style: 'currency',
