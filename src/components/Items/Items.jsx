@@ -39,6 +39,7 @@ export default function Items(props) {
         <Item key={index} item={item} onItemClick={props.onItemClick} />
       ))}
       <div className="pagination">
+        <p>Страница:</p>
         {Array.from({ length: totalPages }, (_, i) => i + 1).map((pageNumber) => (
           <button
             key={pageNumber}
