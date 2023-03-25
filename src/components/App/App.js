@@ -11,7 +11,6 @@ import ErrorLoad from "../ErrorLoad/ErrorLoad";
 
 function App() {
 
-
   // выбор активного тега
   const [activeTag, setActiveTag] = useState(false)
   const onClickTag = (tag) => {
