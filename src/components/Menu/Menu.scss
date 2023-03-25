@@ -23,7 +23,8 @@
 }
 .menu::-webkit-scrollbar-thumb {
   border-radius: 10px;
-  background: linear-gradient(180deg, $blue-light, $blue, $blue-light);
+  //background: linear-gradient(180deg, $blue-light, $blue, $blue-light);
+  background: $blue-light;
 }
 
 
