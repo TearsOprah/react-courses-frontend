@@ -24,3 +24,9 @@
   color: $white;
   background-color: $blue;
 }
+
+.tag-inactive:hover {
+  color: $blue;
+  background-color: $white;
+  cursor: default;
+}

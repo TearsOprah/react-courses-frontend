@@ -11,6 +11,6 @@ export default function Tag(props) {
   }
 
   return (
-    <p onClick={onClickTag} className={`tag ${props.activeTag === props.value ? 'tag-active' : ''}`}>{props.value}</p>
+    <p onClick={onClickTag} className={`tag ${props.inactive && 'tag-inactive'} ${props.activeTag === props.value ? 'tag-active' : ''}`}>{props.value}</p>
   )
 }
