@@ -30,7 +30,7 @@ export default function Menu({ activeIndexCategory,
         </ul>
         <h2 className={'tags-title'}>Теги</h2>
         <ul className={'menu-tags'}>
-          {tagList.map((tag, index)=> <Tag onClickTag={(tag) => onClickTag(tag)} activeTag={activeTag} key={index} value={tag} />)}
+          {tagList.sort().map((tag, index)=> <Tag onClickTag={(tag) => onClickTag(tag)} activeTag={activeTag} key={index} value={tag} />)}
         </ul>
       </div>
     </>

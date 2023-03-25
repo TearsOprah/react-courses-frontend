@@ -3,7 +3,11 @@ import './Tag.scss'
 export default function Tag(props) {
 
   const onClickTag = () => {
-    props.onClickTag(props.value)
+    if (props.activeTag === props.value) {
+      props.onClickTag(false)
+    } else {
+      props.onClickTag(props.value)
+    }
   }
 
   return (
