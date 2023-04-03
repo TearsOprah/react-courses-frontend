@@ -23,6 +23,9 @@ export default function Menu({ activeIndexCategory,
   return (
     <>
       <div className={`menu ${menuIsHide ? 'menu-hide' : ''}`}>
+        <p className={'menu-categories-title'}>
+          {menuIsHide ? '' : 'Категории'}
+        </p>
         <Categories activeIndexCategory={activeIndexCategory}
                     menuIsHide={menuIsHide}
                     onClickCategory={(index) => onClickCategory(index)} />
