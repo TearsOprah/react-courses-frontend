@@ -11,6 +11,9 @@ import ErrorLoad from "../ErrorLoad/ErrorLoad";
 
 function App() {
 
+  // изначально состояние загружается, чтобы рендерить скелетон
+  const [isLoading, setIsLoading] = useState(true)
+
   // выбор активного тега
   const [activeTag, setActiveTag] = useState(false)
   const onClickTag = (tag) => {
@@ -46,6 +49,10 @@ function App() {
   const [items, setItems] = useState([])
   // получаем массив с курсами, следим за изменение активной категории
   useEffect(() => {
+
+    // перед отправкой запроса показываем скелетон
+    setIsLoading(true)
+
     fetch(`https://react-courses-backend.vercel.app/courses/${activeIndexCategory === 5 ? '' : `${categoriesId[activeIndexCategory]}`}`)
       .then(res => res.json())
       .then(data => {
@@ -61,6 +68,8 @@ function App() {
           setItems(data)
         }
         setHasError(false); // сбрасываем состояние ошибки при успешном получении данных
+        // поменяли состояние на загружено
+        setIsLoading(false)
 
       })
       .catch(err => {
@@ -124,6 +133,7 @@ function App() {
       />
 
       {hasError ? <ErrorLoad /> : <Items items={items}
+                                         isLoading={isLoading}
                                          currentPage={currentPage}
                                          handlePageChange={handlePageChange}
                                          onItemClick={handleItemClick}
