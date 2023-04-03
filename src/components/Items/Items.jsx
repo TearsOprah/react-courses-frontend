@@ -1,12 +1,8 @@
 import './Items.scss'
 import Item from "../Item/Item";
-import {useState} from "react";
 
 export default function Items(props) {
 
-  // пагинация
-
-  const [currentPage, setCurrentPage] = useState(1)
   // кол-во элементов на странице
   const ITEMS_PER_PAGE = 12;
   // общее кол-во элементов
@@ -14,24 +10,9 @@ export default function Items(props) {
   // кол-во страниц
   const totalPages = Math.ceil(TOTAL_ITEMS / ITEMS_PER_PAGE);
 
-  function handlePageChange(pageNumber) {
-    setCurrentPage(pageNumber);
-  }
+  const startIndex = (props.currentPage - 1) * ITEMS_PER_PAGE;
+  const endIndex = props.currentPage * ITEMS_PER_PAGE;
 
-  const startIndex = (currentPage - 1) * ITEMS_PER_PAGE;
-  const endIndex = currentPage * ITEMS_PER_PAGE;
-
-  // return (
-  //   <ul className={'items'}>
-  //     {
-  //       props.items && props.items.map((item, index) =>
-  //         <Item key={index}
-  //               item={item}
-  //               onItemClick={props.onItemClick} />
-  //       )
-  //     }
-  //   </ul>
-  // )
 
   return (
     <div className="items">
@@ -43,8 +24,8 @@ export default function Items(props) {
         {Array.from({ length: totalPages }, (_, i) => i + 1).map((pageNumber) => (
           <button
             key={pageNumber}
-            className={`page-button ${pageNumber === currentPage ? 'active-page-button' : ''}`}
-            onClick={() => handlePageChange(pageNumber)}
+            className={`page-button ${pageNumber === props.currentPage ? 'active-page-button' : ''}`}
+            onClick={() => props.handlePageChange(pageNumber)}
           >
             {pageNumber}
           </button>

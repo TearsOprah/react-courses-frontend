@@ -15,6 +15,7 @@ function App() {
   const [activeTag, setActiveTag] = useState(false)
   const onClickTag = (tag) => {
     setActiveTag(tag)
+    handlePageChange(1)
   }
 
   // стейт с курсами выбранной категории
@@ -25,6 +26,7 @@ function App() {
   const onClickCategory = (index) => {
     setActiveTag(false)
     setActiveIndexCategory(index)
+    handlePageChange(1)
   }
 
   // логика для items
@@ -103,6 +105,12 @@ function App() {
     }
   }, [isOpen])
 
+  // пагинация
+  const [currentPage, setCurrentPage] = useState(1)
+
+  function handlePageChange(pageNumber) {
+    setCurrentPage(pageNumber);
+  }
 
   return (
     <div className="App">
@@ -116,8 +124,10 @@ function App() {
       />
 
       {hasError ? <ErrorLoad /> : <Items items={items}
-                                    onItemClick={handleItemClick}
-                                    activeIndexCategory={activeIndexCategory} />}
+                                         currentPage={currentPage}
+                                         handlePageChange={handlePageChange}
+                                         onItemClick={handleItemClick}
+                                         activeIndexCategory={activeIndexCategory} />}
 
       <Background />
 
