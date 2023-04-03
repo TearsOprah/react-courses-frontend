@@ -66,6 +66,20 @@
   background-color: $blue;
 }
 
+.items-with-menu-hide {
+
+  left: calc(105px + (100% - 1510px) / 2);
+  width: calc(100vw - 125px);
+
+  @media screen and (max-width: 1520px) {
+    left: 105px;
+  }
+
+  @media screen and (max-width: 600px) {
+    left: 90px;
+    width: calc(100% - 100px);
+  }
+}
 
 
 //.items::-webkit-scrollbar {

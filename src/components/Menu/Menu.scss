@@ -87,3 +87,31 @@
   flex-direction: row;
   align-items: start;
 }
+
+.menu-hide-button {
+  position: absolute;
+  top: 0;
+  right: 0;
+  z-index: 3;
+  width: 40px;
+  height: 40px;
+  border-radius: 50%;
+  font-size: 22px;
+  border: none;
+  transition: all .2s;
+  background-color: inherit;
+
+}
+
+.menu-hide-button:hover {
+  cursor: pointer;
+  font-size: 24px;
+}
+
+.menu-hide {
+  width: 95px;
+
+  @media screen and (max-width: 600px) {
+    width: 80px;
+  }
+}

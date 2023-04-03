@@ -121,11 +121,21 @@ function App() {
     setCurrentPage(pageNumber);
   }
 
+
+  // menu hide state
+  const [menuIsHide, setMenuIsHide] = useState(false)
+  const handleHideMenu = () => {
+    setMenuIsHide(!menuIsHide)
+  }
+
+
   return (
     <div className="App">
       <Header />
 
       <Menu activeTag={activeTag}
+            menuIsHide={menuIsHide}
+            handleHideMenu={handleHideMenu}
             onClickTag={(tag) => onClickTag(tag)}
             activeIndexCategory={activeIndexCategory}
             onClickCategory={(index) => onClickCategory(index)}
@@ -133,6 +143,7 @@ function App() {
       />
 
       {hasError ? <ErrorLoad /> : <Items items={items}
+                                         menuIsHide={menuIsHide}
                                          isLoading={isLoading}
                                          currentPage={currentPage}
                                          handlePageChange={handlePageChange}

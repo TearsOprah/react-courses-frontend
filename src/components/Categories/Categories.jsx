@@ -7,7 +7,7 @@ import languageIcon from '../../images/icon_for_courses_react/language.svg'
 import marketingIcon from '../../images/icon_for_courses_react/marketing.svg'
 import allIcon from '../../images/icon_for_courses_react/all.svg'
 
-export default function Categories({ activeIndexCategory, onClickCategory }) {
+export default function Categories({ activeIndexCategory, onClickCategory, menuIsHide }) {
 
   const categories = [
     'Дизайн',
@@ -28,13 +28,22 @@ export default function Categories({ activeIndexCategory, onClickCategory }) {
   }
 
   return (
+    // <ul className={'menu-categories'}>
+    //   {categories.map((category, index) =>
+    //     <li className={`category ${activeIndexCategory === index ? 'category-active' : ''}`}
+    //         key={index}
+    //         onClick={() => onClickCategory(index)}>
+    //       <img className={`category-icon ${activeIndexCategory === index ? 'category-icon-active' : ''}`} src={icons[category]} alt={`${category} icon`} />
+    //       {category}
+    //     </li>
+    //   )}
+    // </ul>
+
     <ul className={'menu-categories'}>
       {categories.map((category, index) =>
-        <li className={`category ${activeIndexCategory === index ? 'category-active' : ''}`}
-            key={index}
-            onClick={() => onClickCategory(index)}>
+        <li className={`category ${activeIndexCategory === index ? 'category-active' : ''}`} key={index} onClick={() => onClickCategory(index)}>
           <img className={`category-icon ${activeIndexCategory === index ? 'category-icon-active' : ''}`} src={icons[category]} alt={`${category} icon`} />
-          {category}
+          <span className={`category-text ${activeIndexCategory === index ? 'category-text-active' : ''} ${menuIsHide ? 'category-text-hide' : ''}`}>{category}</span>
         </li>
       )}
     </ul>

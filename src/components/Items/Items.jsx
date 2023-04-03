@@ -17,7 +17,7 @@ export default function Items(props) {
 
 
   return (
-    <div className="items">
+    <div className={`items ${props.menuIsHide && 'items-with-menu-hide'}`}>
       {
         props.isLoading ?
         // если идет загрузка - создаем фейковый массив из 6 значений и рендерим скелетон
